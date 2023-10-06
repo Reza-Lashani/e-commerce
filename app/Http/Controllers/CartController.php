@@ -26,17 +26,19 @@ class CartController extends Controller
                             ->where('status', 'in_process')
                             ->get();
 
+        $totalPrice = 0;
         $orderProducts = [];
         foreach ($userOrders as $index => $order) {
             $orderId = $order->id;
             $orderProducts[$index] = OrderProduct::where('order_id', $orderId)->get()->first();
+            $totalPrice += $orderProducts[$index]->price;
         }
 
         $orderedProducts = [];
         foreach ($orderProducts as $orderProduct) {
             $productId = $orderProduct->product_id;
-            $product = Product::find($productId);
-            
+            $product = Product::find($productId); 
+
             if ($product) {
                 $orderedProducts[] = $product;
             }
@@ -46,7 +48,8 @@ class CartController extends Controller
             "user" => $user,
             "userOrders" => $userOrders,
             "orderProducts" => $orderProducts,
-            "orderedProducts" => $orderedProducts
+            "orderedProducts" => $orderedProducts,
+            "totalPrice" => $totalPrice
         ]);
     }
 

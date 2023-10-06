@@ -18,14 +18,20 @@ body {
     align-items: center;
 }
 
+.logo {
+    width: 80px;
+    height: auto;
+}
+
 .gender-input,
 .date-of-birth-input {
     font-family: 'Inclusive Sans', sans-serif;
 }
 
-.register-form {
+.card {
     border: 2px solid black;
     border-radius: 10px;
+    width: 230px;
     padding: 15px;
 }
 
@@ -40,6 +46,11 @@ body {
 .card-header {
     text-align: left;
     margin: 0px 0px 10px 0px;
+}
+
+.card-header h3 {
+    margin: 0;
+    padding: 0;
 }
 
 .form-label {
@@ -65,6 +76,12 @@ body {
     width: 90px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+
+.invalid-feedback {
+    color: red;
 }
 
 footer {

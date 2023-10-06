@@ -16,6 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->unsignedBigInteger('order_id');
             $table->unsignedBigInteger('product_id');
+            $table->enum('gender', ['Male', 'Female', 'Non-Binary', 'Other']);;
             $table->integer('quantity');
             $table->decimal('price', 10, 2);
         });

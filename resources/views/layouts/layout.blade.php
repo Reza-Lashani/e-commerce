@@ -14,6 +14,11 @@
 
         <!-- Styles -->
         <link href="/CSS/style.css" rel="stylesheet">
+
+        <!-- Script -->
+        {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="JavaScript/MyScript.js"></script> --}}
+
     </head>
     <body class="antialiased">
 
@@ -28,9 +33,11 @@
 
         <header>
             <div class="header-top">
-                <a href="{{ route('welcome') }}">
-                    <img class="logo" src="{{ asset('img/logo.png') }}" alt="E-Commerce Logo">
-                </a>
+                <div class="logo">
+                    <a href="{{ route('welcome') }}">
+                        <img class="logo-icon" src="{{ asset('img/logo.png') }}" alt="E-Commerce Logo">
+                    </a>
+                </div>
                 <form action="{{ route('product.search') }}" class="search-bar" method="Get">
                     <input type="text" name="query" placeholder="Search in E-Commerce">
                     <button type="submit">
@@ -39,29 +46,31 @@
                         </span>
                     </button>
                 </form>
-                <a 
-                @if(auth()->check())
-                    href="{{ route('cart.index', ["user_id" => auth()->user()->id]) }}"
-                @else
-                    href="{{ route('login') }}"
-                @endif>
-                    <div class="material-symbols-outlined">
-                        shopping_cart
-                        @if (isset($activeOrdersNum))
-                            <div class="badge">
-                                {{ $activeOrdersNum }}
-                            </div>
-                        @endif
-                    </div>
-                </a>
+                <div class="cart-icon">
+                    <a 
+                    @if(auth()->check())
+                        href="{{ route('cart.index', ["user_id" => auth()->user()->id]) }}"
+                    @else
+                        href="{{ route('login') }}"
+                    @endif>
+                        <div class="material-symbols-outlined">
+                            shopping_cart
+                            @if (isset($activeOrdersNum) && $activeOrdersNum>0)
+                                <div class="badge">
+                                    {{ $activeOrdersNum }}
+                                </div>
+                            @endif
+                        </div>
+                    </a>
+                </div>
                 @guest
-                    <div class="welcome-buttons">
+                    <div class="welcome log-reg">
                         <a href="{{ route('login') }}" class="btn btn-login">Login</a>
                         <a href="{{ route('register') }}" class="btn btn-sign-up">Sign-up</a>
                     </div>
                 @endguest
                 @auth
-                    <div class="user-profile">
+                    <div class="user-profile log-reg">
                         <form action="{{ route('logout') }}"
                             class="logout-form" method="POST">
                             @csrf
@@ -73,13 +82,15 @@
                 @endauth
             </div>
             <nav class="navigation-bar">
-                <ul class="navigation-bar-list">
-                    <a href="#"><li>Home</li></a>
-                    <a href="#"><li>Categories</li></a>
-                    <a href="#"><li>Services</li></a>
-                    <a href="#"><li>Sell</li></a>
-                    <a href="#"><li>About</li></a>
-                </ul>
+                <div>
+                    <ul class="navigation-bar-list">
+                        <a href="{{ route('welcome') }}"><li>Home</li></a>
+                        <a href="#"><li>Categories</li></a>
+                        <a href="#"><li>Services</li></a>
+                        <a href="#"><li>Sell</li></a>
+                        <a href="#"><li>About</li></a>
+                    </ul>
+                </div>
             </nav>
         </header>
 

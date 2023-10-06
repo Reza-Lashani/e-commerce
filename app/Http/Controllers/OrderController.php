@@ -53,4 +53,18 @@ class OrderController extends Controller
             ]);
         }
     }
+
+    public function destroy($id) {
+        
+        $orderProduct = OrderProduct::findOrFail($id);
+        $orderId = $orderProduct->id;
+        $order = Order::findOrFail($orderId);
+
+        $orderProduct->delete();
+        $order->delete();
+        
+        return redirect()
+                 ->back()
+                 ->with('success', 'Item has been deleted successfully.');
+    }
 }

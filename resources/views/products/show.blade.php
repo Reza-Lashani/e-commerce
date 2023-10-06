@@ -14,9 +14,11 @@
             @csrf
             <input type="hidden" name="product_id" value="{{ $product->id }}">
             <input type="hidden" name="price" value="{{ $product->price }}">
-            Number: 
+            Qty: 
             <input type="number" name="number" value="1" min="1" max="5" style="width: 40px">
-            <button type="submit" class="add-to-cart-button">add</button>
+            <button type="submit" class="btn add-to-cart-button">
+                Add to cart
+            </button>
         </form>
     </section>
 @endsection
