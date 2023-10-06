@@ -15,10 +15,6 @@
         <!-- Styles -->
         <link href="/CSS/style.css" rel="stylesheet">
 
-        <!-- Script -->
-        {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="JavaScript/MyScript.js"></script> --}}
-
     </head>
     <body class="antialiased">
 
