@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    font-family: 'Inclusive Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.notification a {
+    color: black;
+}
+
+.notification {
+    font-family: 'Inclusive Sans', sans-serif;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 270px;
+    background-color: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    animation: expand 2s ease forwards;
+    z-index: 1000;
+    margin-top: 10px;
+    padding: 15px;
+    border: 2px solid black;
+}
+
+.alert-error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-btn {
+    display: block;
+    font-family: 'Inclusive Sans', sans-serif;
+    background-color: white;
+    font-size: 12px;
+    border: 1px solid black;
+    padding: 5px 5px 5px 5px;
+    margin-top: 8px;
+    border-radius: 5px;
+}
+
+#closeNotification:target {
+    display: none;
+}
+
+.sent-code {
+    margin-bottom: 15px;
+}
+
+.normal-text {
+    margin-bottom: 0px;
+}
+
+.phone-verification-form {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.phone-verification-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    width: 300px;
+}
+
+.phone-verification-card-header {
+    width: 100%;
+    padding-top: 0px;
+    text-align: left;
+}
+
+.phone-verification-card-header h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.verification-code-input {
+    width: 60px;
+    height: 25px;
+    font-family: 'Inclusive Sans', sans-serif;
+}
+
+.submit-button {
+    font-family: 'Inclusive Sans', sans-serif;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #eee;
+    font-size: 14px;
+    width: 80px;
+    height: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+
+.submit-button {
+    width: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+
+footer {
+    padding-left: 5px;
+    padding-bottom: 5px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
+.black-icon {
+    color: black;
+}
+
+footer a {
+    padding-right: 5px;
+    padding-bottom: 5px;
+}

@@ -24,6 +24,7 @@ class User extends Authenticatable
         'date_of_birth',
         'gender',
         'password',
+        'phone_verification_status'
     ];
 
     // Define the addresses relationship (one-to-many)

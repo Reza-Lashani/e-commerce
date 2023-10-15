@@ -43,6 +43,8 @@ class CartController extends Controller
                 $orderedProducts[] = $product;
             }
         }
+
+        session(['total_price' => $totalPrice]);
         
         return view('cart', [
             "user" => $user,

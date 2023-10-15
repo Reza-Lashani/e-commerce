@@ -16,6 +16,7 @@
             <input type="hidden" name="price" value="{{ $product->price }}">
             Qty: 
             <input type="number" name="number" value="1" min="1" max="5" style="width: 40px">
+            <br>
             <button type="submit" class="btn add-to-cart-button">
                 Add to cart
             </button>

@@ -31,4 +31,9 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'kavenegar' => [
+        'api_key' => '7A306C79776862675A4C3966726866797468747972326345507338762F6978484657544D5969343857766F3D',
+        'sender_number' => '10008663',
+    ]
+
 ];

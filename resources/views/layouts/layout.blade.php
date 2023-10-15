@@ -15,10 +15,6 @@
         <!-- Styles -->
         <link href="/CSS/style.css" rel="stylesheet">
 
-        <!-- Script -->
-        {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="JavaScript/MyScript.js"></script> --}}
-
     </head>
     <body class="antialiased">
 
@@ -26,7 +22,7 @@
             <div class="notification" id="closeNotification">
                 <div class="alert alert-success">
                     {{ session('success') }}
-                    <a href="#closeNotification" class="close-btn"">Close</a>
+                    <a href="#closeNotification" class="close-btn">Close</a>
                 </div>
             </div>
         @endif
@@ -71,13 +67,28 @@
                 @endguest
                 @auth
                     <div class="user-profile log-reg">
-                        <form action="{{ route('logout') }}"
-                            class="logout-form" method="POST">
-                            @csrf
-                            <button type="submit" class="btn-logout">
-                                log out
-                            </button>
-                        </form>
+                        <a href="{{ route('user.profile') }}" class="avatar" aria-label="User profile">
+                            <span class="fa fa-user"></span>
+                        </a>
+                        <div class="user-profile-dropdown">
+                            <a href="{{ route('user.profile') }}" class="user-profile-dropdown-content">
+                                <span class="fa fa-user fa-dropdown"></span>
+                                Profile
+                            </a>
+                            <a href="#" class="user-profile-dropdown-content">
+                                <span class="fa fa-heart fa-dropdown"></span>
+                                List
+                            </a>
+                            <form action="{{ route('logout') }}"
+                                class="logout-form user-profile-dropdown-content" method="POST">
+                                @csrf
+                                
+                                <button type="submit" class="btn-logout">
+                                    <span class="fa fa-sign-out-alt fa-dropdown"></span>
+                                    Log out
+                                </button>
+                            </form>
+                        </div>
                     </div>                
                 @endauth
             </div>

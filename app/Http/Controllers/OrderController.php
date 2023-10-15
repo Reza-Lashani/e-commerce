@@ -45,7 +45,7 @@ class OrderController extends Controller
 
             return redirect()->route('home')->with(
                 'success',
-                "Thank you for your purchase!");
+                "The product added to cart successfully!");
         } else {
             return redirect()->route('login', [
                 'redirect_back' => route('product.show',

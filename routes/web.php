@@ -20,7 +20,10 @@ Route::post('/order/store', 'App\Http\Controllers\OrderController@store')->name(
 Route::delete('/order/{id}', 'App\Http\Controllers\OrderController@destroy')->name('items.destroy');
 Route::get('/search', 'App\Http\Controllers\ProductController@search')->name('product.search');
 Route::get('/cart/{user_id}', 'App\Http\Controllers\CartController@index')->name('cart.index');
-
+Route::get('profile', 'App\Http\Controllers\ProfileController@index')->name('user.profile');
+Route::get('/phone-verify', 'App\Http\Controllers\PhoneVerificationController@showVerificationForm')->name('phone.verify');
+Route::get('/phone-verified', 'App\Http\Controllers\PhoneVerificationController@verify')->name('phone.verified');
+Route::get('/payment', 'PaymentController@makePayment')->name('payment');
 
 Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login')->middleware('login.redirect');
 

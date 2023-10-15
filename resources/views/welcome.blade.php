@@ -73,41 +73,4 @@
 
 </main>
 
-<script>
-    const categoryWrappers = document.querySelectorAll('.category-wrapper');
-
-    for (const categoryWrapper of categoryWrappers) {
-    categoryWrapper.addEventListener('mousedown', function(event) {
-        event.preventDefault();
-
-        // Get the initial position of the mouse.
-        const mouseX = event.clientX;
-        const mouseY = event.clientY;
-
-        // Start listening for mousemove events.
-        document.addEventListener('mousemove', mouseMoveHandler);
-
-        // Start listening for mouseup events.
-        document.addEventListener('mouseup', mouseUpHandler);
-
-        function mouseMoveHandler(event) {
-        // Calculate the change in the mouse position.
-        const deltaX = event.clientX - mouseX;
-        const deltaY = event.clientY - mouseY;
-
-        // Update the position of the category wrapper.
-        categoryWrapper.style.left = `${categoryWrapper.offsetLeft + deltaX}px`;
-        categoryWrapper.style.top = `${categoryWrapper.offsetTop + deltaY}px`;
-        }
-
-        function mouseUpHandler() {
-        // Stop listening for mousemove events.
-        document.removeEventListener('mousemove', mouseMoveHandler);
-
-        // Stop listening for mouseup events.
-        document.removeEventListener('mouseup', mouseUpHandler);
-        }
-    });
-    }
-</script>
 @endsection

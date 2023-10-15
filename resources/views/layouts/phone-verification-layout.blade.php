@@ -13,7 +13,7 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 
         <!-- Styles -->
-        <link href="/CSS/register-style.css" rel="stylesheet">
+        <link href="/CSS/phone-verification.css" rel="stylesheet">
     </head>
     <body class="antialiased">
 

@@ -23,6 +23,7 @@ return new class extends Migration
             $table->enum('gender', ['Male', 'Female', 'Non-Binary', 'Other']);
             $table->unsignedBigInteger('category_id');
             $table->date('date_of_birth');
+            $table->boolean('phone_verification_status')->default(false);
         });
     }
 

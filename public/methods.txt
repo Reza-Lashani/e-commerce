@@ -1,0 +1,21 @@
+Array
+(
+    [0] => __construct
+    [1] => Send
+    [2] => SendArray
+    [3] => Status
+    [4] => StatusLocalMessageId
+    [5] => Select
+    [6] => SelectOutbox
+    [7] => LatestOutbox
+    [8] => CountOutbox
+    [9] => Cancel
+    [10] => Receive
+    [11] => CountInbox
+    [12] => CountPostalcode
+    [13] => SendbyPostalcode
+    [14] => AccountInfo
+    [15] => AccountConfig
+    [16] => VerifyLookup
+    [17] => CallMakeTTS
+)

@@ -30,7 +30,8 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = 'phone-verify';
 
     /**
      * Create a new controller instance.
@@ -75,6 +76,7 @@ class RegisterController extends Controller
             'date_of_birth' => $data['date_of_birth'],
             'gender' => $data['gender'],
             'password' => Hash::make($data['password']),
+            'phone_verification_status' => false,
         ]);
     }
 }
